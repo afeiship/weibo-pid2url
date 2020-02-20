@@ -10,6 +10,7 @@ Gem::Specification.new do |spec|
   spec.email = ["1290657123@qq.com"]
 
   spec.description = %q{Weibo sso gem for nx.}
+  spec.summary = %q{Weibo sso gem.}
   spec.homepage = "https://github.com/afeiship/nx-weibo-sso"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
