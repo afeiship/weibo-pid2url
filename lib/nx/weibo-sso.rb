@@ -5,6 +5,8 @@ require "json"
 require "base64"
 require "net/http"
 
+PRELOGIN_JSONP_RE = /{(.*)}/
+
 module Nx
   class WeiboSso
     def self.token(username, password)
@@ -16,8 +18,6 @@ module Nx
       su = Base64.strict_encode64(username.sub("@", "%40"))
 
       # regexp
-      PRELOGIN_JSONP_RE = /{(.*)}/
-
       prelogin_data = {
         entry: "sso",
         callback: "sinaSSOController.preloginCallBack",
