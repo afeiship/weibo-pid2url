@@ -1,2 +1,2 @@
-require "nx/version"
-require "nx/weibo-sso"
+require "./nx/version"
+require "./nx/weibo-sso"
