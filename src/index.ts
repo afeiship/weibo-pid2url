@@ -24,6 +24,7 @@ class WeiboPid2url {
   }
 
   public get(pid: string) {
+    this.validatePid(pid);
     const host = this.options.host;
     const suffix = this.getSuffix(pid);
     const url = `https://${host}/large/${pid}.${suffix}`;
@@ -31,6 +32,7 @@ class WeiboPid2url {
   }
 
   public gets(pid, sizes?: string[]) {
+    this.validatePid(pid);
     const host = this.options.host;
     const suffix = this.getSuffix(pid);
     const result = {};
@@ -47,6 +49,12 @@ class WeiboPid2url {
 
   private getAllSizes() {
     return Object.values(WeiboPicType);
+  }
+
+  private validatePid(pid: string) {
+    if(!pid || pid.length!== 22) {
+      throw new Error('Invalid pid');
+    }
   }
 }
 
