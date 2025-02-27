@@ -3,8 +3,8 @@ import WeiboPid2url from '../src/index.js';
 describe('Normal test cases', () => {
   test('method: invalid pid should throw error', () => {
     const wp1 = new WeiboPid2url({ host: 'tva1.js.work' });
-    // expect(() => wp1.get('invalid_pid')).toThrow('Invalid pid');
-    // expect(() => wp1.get('')).toThrow('Invalid pid');
+    expect(() => wp1.get('invalid_pid')).toThrow('Invalid pid');
+    expect(() => wp1.get('')).toThrow('Invalid pid');
   });
   test('method: get/gets/gets(all)', () => {
     const wp1 = new WeiboPid2url({ host: 'tva1.js.work' });

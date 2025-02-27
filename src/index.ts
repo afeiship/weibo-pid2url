@@ -52,7 +52,7 @@ class WeiboPid2url {
   }
 
   private validatePid(pid: string) {
-    if(!pid || pid.length!== 22) {
+    if(!pid || pid.length!== 32) {
       throw new Error('Invalid pid');
     }
   }
