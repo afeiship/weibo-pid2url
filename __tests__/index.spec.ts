@@ -36,4 +36,15 @@ describe('Normal test cases', () => {
     const url1 = wp1.get('007S8ZIlgy1gexw87htqhj305k05k74o');
     expect(url1).toBe('https://tva1.js.work/small/007S8ZIlgy1gexw87htqhj305k05k74o.jpg');
   });
+
+  test('method: get by custom size', () => {
+    const wp1 = new WeiboPid2url({ host: 'tva1.js.work' });
+    const url1 = wp1.get('007S8ZIlgy1gexw87htqhj305k05k74o', 'large');
+    const url2 = wp1.get('007S8ZIlgy1gexw87htqhj305k05k74o', 'small');
+    const url3 = wp1.get('007S8ZIlgy1gexw87htqhj305k05k74o', 'mw1024');
+
+    expect(url1).toBe('https://tva1.js.work/large/007S8ZIlgy1gexw87htqhj305k05k74o.jpg');
+    expect(url2).toBe('https://tva1.js.work/small/007S8ZIlgy1gexw87htqhj305k05k74o.jpg');
+    expect(url3).toBe('https://tva1.js.work/mw1024/007S8ZIlgy1gexw87htqhj305k05k74o.jpg');
+  })
 });

@@ -29,11 +29,12 @@ class WeiboPid2url {
     this.options = { ...defaults, ...inOptions };
   }
 
-  public get(pid: string) {
+  public get(pid: string, size?: string) {
     this.validatePid(pid);
     const { host, defaultSize } = this.options;
     const suffix = this.getSuffix(pid);
-    const url = `https://${host}/${defaultSize}/${pid}.${suffix}`;
+    const _size = size || defaultSize;
+    const url = `https://${host}/${_size}/${pid}.${suffix}`;
     return url;
   }
 
