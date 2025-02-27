@@ -1,4 +1,4 @@
-import WeiboPid2url from '../src/index.js';
+import WeiboPid2url, { WeiboPicType } from '../src/index.js';
 
 describe('Normal test cases', () => {
   test('method: invalid pid should throw error', () => {
@@ -6,6 +6,7 @@ describe('Normal test cases', () => {
     expect(() => wp1.get('invalid_pid')).toThrow('Invalid pid');
     expect(() => wp1.get('')).toThrow('Invalid pid');
   });
+
   test('method: get/gets/gets(all)', () => {
     const wp1 = new WeiboPid2url({ host: 'tva1.js.work' });
     const url1 = wp1.get('007S8ZIlgy1gexw87htqhj305k05k74o');
@@ -28,5 +29,11 @@ describe('Normal test cases', () => {
       thumb180: 'https://tva1.js.work/thumb180/007S8ZIlgy1gexw87htqhj305k05k74o.jpg',
       thumbnail: 'https://tva1.js.work/thumbnail/007S8ZIlgy1gexw87htqhj305k05k74o.jpg'
     });
+  });
+
+  test('change default size', () => {
+    const wp1 = new WeiboPid2url({ host: 'tva1.js.work', defaultSize: WeiboPicType.small });
+    const url1 = wp1.get('007S8ZIlgy1gexw87htqhj305k05k74o');
+    expect(url1).toBe('https://tva1.js.work/small/007S8ZIlgy1gexw87htqhj305k05k74o.jpg');
   });
 });
