@@ -1,6 +1,6 @@
 {
   "name": "@jswork/weibo-pid2url",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Get url from weibo pid.",
   "type": "module",
   "npmClient": "pnpm",
@@ -38,8 +38,9 @@
   },
   "homepage": "https://js.work",
   "keywords": [
-    "weibo-pid2url",
-    "number",
-    "num"
+    "weibo",
+    "host",
+    "pid",
+    "url"
   ]
 }
