@@ -51,6 +51,7 @@ class WeiboPid2url {
   }
 
   private getSuffix(pid: string) {
+    if (!pid) return '';
     return pid.charAt(21) === 'g' ? 'gif' : 'jpg';
   }
 
